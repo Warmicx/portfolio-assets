@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" version="1.1">
+  <style>
+    :root { --mono: #E5E7EB; } /* cambia este valor para otro tono */
+  </style>
+  <defs>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- fondo -->
+  <rect x="32" y="32" width="960" height="960" rx="220" fill="#0B1220"
+        transform="translate(0,0) scale(1)"/>
+
+  <!-- orejitas (monocromo con leve transparencia) -->
+  <g filter="url(#softGlow)">
+    <path d="M324 210l110 84-142 14z" fill="var(--mono)" opacity="0.8"
+          transform="translate(0,50) scale(1)"/>
+    <path d="M700 210l-110 84 142 14z" fill="var(--mono)" opacity="0.8"
+          transform="translate(0,50) scale(1)"/>
+  </g>
+
+  <!-- corchetes (monocromo) -->
+  <g stroke="var(--mono)" stroke-width="55" stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#softGlow)">
+    <!-- izquierdo -->
+    <path d="M210 512l180-150M210 512l180 150"
+          transform="translate(-100,100) scale(0.9)"/>
+    <!-- derecho -->
+    <path d="M814 512l-180-150M814 512l-180 150"
+          transform="translate(200,100) scale(0.9)"/>
+  </g>
+
+  <!-- W (monocromo) -->
+  <path d="M290 372l118 316 88-216 88 216 118-316"
+        fill="none" stroke="var(--mono)" stroke-width="80" stroke-linecap="round" stroke-linejoin="round" filter="url(#softGlow)"
+        transform="translate(116,150) scale(0.8)"/>
+</svg>

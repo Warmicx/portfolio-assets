@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#22D3EE"/>
+    </linearGradient>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- fondo -->
+  <rect x="32" y="32" width="960" height="960" rx="220" fill="#0B1220"
+        transform="translate(0,0) scale(1)"/>
+
+  <g filter="url(#softGlow)">
+    <!-- orejita izq -->
+  <path d="M324 210l110 84-142 14z" fill="url(#grad)" opacity="0.8"
+        transform="translate(0,50) scale(1)"/>
+
+  <!-- orejita der -->
+  <path d="M700 210l-110 84 142 14z" fill="url(#grad)" opacity="0.8"
+        transform="translate(0,50) scale(1)"/>
+  </g>
+
+  <!-- corchetes (se mantienen tus desplazamientos y se agrega scale(1)) -->
+  <g stroke="url(#grad)" stroke-width="55" stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#softGlow)">
+    <!-- izquierdo -->
+    <path d="M210 512l180-150M210 512l180 150"
+          transform="translate(-100,100) scale(0.9)"/>
+    <!-- derecho -->
+    <path d="M814 512l-180-150M814 512l-180 150"
+          transform="translate(200,100) scale(0.9)"/>
+  </g>
+
+  <!-- W -->
+  <path d="M290 372l118 316 88-216 88 216 118-316"
+        fill="none" stroke="url(#grad)" stroke-width="80" stroke-linecap="round" stroke-linejoin="round" filter="url(#softGlow)"
+        transform="translate(116,150) scale(0.8)"/>
+</svg>
